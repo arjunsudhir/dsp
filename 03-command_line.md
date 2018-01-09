@@ -20,7 +20,26 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+>> `pwd` shows current working directory  
+`mkdir <directory>` creates a directory  
+`rm -r <directory>` deletes a directory  
+`touch <file>` creates a new empty file  
+`rm <file>` deletes a file  
+`mv <oldname> <newname>` renames a file  
+`ls -a` lists hidden files  
+`cp <olddir/file> <newdir/>` copies a file from one directory to another  
+`mv <olddir/file> <newdir/>` moves a file from one directory to another  
+`echo <text>` outputs text to the terminal (standard output)  
+`cat <file>` outputs contents of file to the terminal  
+`>` redirects standard output to file (overwrites)  
+`>>` redirects standard output to file (appends)  
+`<` redirects standard input to a command  
+`2>` redirect error messages  
+`|` redirects standard output of command on left as standard input to command on right  
+`sort` takes standard input and orders it alphabetically for standard output  
+`uniq` filters out adjacent, duplicate lines  
+`grep` searches for lines that match a pattern  
+`sed` searches for and modifies a pattern based on an expression
 
 ---
 
@@ -35,7 +54,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+>> `ls` lists all contents of working directory  
+`ls -a` lists all contents of a directory, including hidden files and directories  
+`ls -l` lists all contents in long format  
+`ls -lh` lists all contents in long format with human readable sizes (unit suffixes)  
+`ls -lah` lists all contents including hidden files/directories in long format with human readable sizes (unit suffixes)  
+`ls -t` orders files and directories by the time they were last modified  
+`ls -Glp` long format colorized by file type with a slash ('/') after directory names
 
 ---
 
@@ -43,7 +68,12 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+>> `ls -lhtr` list contents by modified timestamp in reverse order with unit suffixes  
+`ls -ld */` only list directories in working directory  
+`ls -lhR` list contents of working directory and all child directories (recursively) with unit suffixes  
+`ls -lA` list all contents including hidden files except '.' (current directory) and '..' (parent directory)  
+`ls -lS` list contents by file size
+
 
 ---
 
@@ -51,7 +81,5 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
- 
-
+>> `xargs` is used to convert standard input into arguments that are passed to another command. For a simple example, xargs can rename multiple files with .TXT extension to .txt by providing it a list of filenames that have all-caps suffixes (identified with the `basename` command):  
+`basename -s .TXT -a *.TXT | xargs -n1 -I % mv %.TXT %.txt`
